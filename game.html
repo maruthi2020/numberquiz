@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+       <script type="text/javascript">
+       var n=127;
+      var r=0;
+      var x=new Date().getTime();    
+            function fun()
+            {
+                var z=new Date().getTime();
+             document.getElementById("box1").innerHTML="time left : "+ ((120000-(z-x))/1000) +"sec";                
+                if(z-x<=120000)
+                {
+                var i,p=0;q=0,t=0;
+                for(i=2;i<n;i++)
+                {
+                    if(n%i==0)
+                    {
+                        p=1;
+                        break;
+                    }
+                }
+                if(n%2==0)
+                 q=1;                
+               if(p==0 || n==2)
+               {  
+                 if(document.getElementById('op1').checked)
+                 t=1;
+                }
+               if(q==1 && p==1)
+                {  
+                 if(document.getElementById("op2").checked)
+                 t=1;
+                }
+               if(p==1 && q==0)
+               {  
+                 if(document.getElementById("op3").checked)
+                 t=1;
+                }
+               if(n==1)
+                {  
+                 if(document.getElementById("op4").checked)
+                 t=1;
+                }
+            if(t==1)
+              r++;
+                var a=Math.floor(Math.random()*1000);
+          document.getElementById("ques").innerHTML="number "+a+" is";
+               n=a;
+               document.getElementById("box").innerHTML="points: "+r;
+               
+               
+               
+               }
+               else
+              { document.getElementById("ques").innerHTML="TIME OVER"+"<br>"+" Reload PAGE to play again ";
+               document.getElementById("ans").innerHTML="points: "+r+"<br>";}
+            }
+        </script>
+    </head>
+    <body>
+         <body bgcolor="blue" id="body">
+             <h1 align="center">simple game</h1>
+             <br><br> 
+             </table>
+        <table align="right" bgcolor="yellow"><tr><td id="box">points :0</td><tr>
+        <tr><td id="box1">time left:2min 0sec</td></tr></table>
+        <table id="table" width="400" height="300" border="5" align="center" style="border:7px solid red" bgcolor="aqua">
+           <tr><td>
+               <table><tr><th id="ques">number 127 is</th></tr></table> 
+                <br><br>
+               <table id="ans">
+               <tr><td><input type="radio"  name="op" id="op1" value="1" >prime</td></tr>
+               <tr><td><input type="radio"name="op" id="op2" value="2" >composite and even</td></tr>
+               <tr><td><input type="radio" name="op" id="op3" value="3" >composite and odd</td></tr>
+               <tr><td><input type="radio" name="op" id="op4" value="4">none of these</td></tr>
+               <tr><td height="40"></td></tr>
+               <tr><td></td><td><input type="button" value="next" onclick="fun()"></td></tr>
+           </table>
+
+            <br>
+            </td>
+          </tr> 
+        
+    </body>
+    </body>
+</html>
